@@ -15,7 +15,7 @@ class CheckEmailValidationTest {
 
     @Test
     fun test_with_incorrectEmail_must_return_false() {
-        var email = "aslkdalkjsfd@mail.r8876u"
+        var email = "aslkdalkjsfd@mail.r8"
         var actual = CheckEmailValidation.check(email)
         assert(!actual)
     }

@@ -1,12 +1,10 @@
 package com.tttrfge.testprojectsession1.presentation.signin
 
-import android.os.Message
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.tttrfge.testprojectsession1.common.ResponseState
-import com.tttrfge.testprojectsession1.data.repository.UserRepositoryImpl
 import com.tttrfge.testprojectsession1.domain.repository.UserRepository
 import kotlinx.coroutines.launch
 

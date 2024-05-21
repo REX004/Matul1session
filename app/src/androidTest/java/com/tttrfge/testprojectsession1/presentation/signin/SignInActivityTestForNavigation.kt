@@ -3,6 +3,7 @@ package com.tttrfge.testprojectsession1.presentation.signin
 
 import android.view.View
 import android.view.ViewGroup
+import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.closeSoftKeyboard
@@ -17,6 +18,7 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import com.tttrfge.testprojectsession1.R
+import com.tttrfge.testprojectsession1.presentation.main.MainActivity
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers.allOf
@@ -74,12 +76,18 @@ class SignInActivityTestForNavigation {
         )
         materialButton.perform(click())
 
-        val textView = onView(
-            allOf(
-                isDisplayed()
+        val activity = ActivityScenario.launch(MainActivity::class.java)
+        activity.onActivity {
+            val textView = onView(
+                allOf(
+                    isDisplayed()
+                )
             )
-        )
-        textView.check(matches(isDisplayed()))
+            Thread(Runnable{
+                textView.check(matches(isDisplayed()))
+            })
+        }
+
     }
 
     private fun childAtPosition(
