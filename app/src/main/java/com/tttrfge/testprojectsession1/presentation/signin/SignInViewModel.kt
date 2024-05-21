@@ -12,14 +12,14 @@ class SignInViewModel(val userRepository: UserRepository) : ViewModel() {
 
     var signInState = MutableLiveData<State>()
     fun signIn(email: String, password : String){
-        signInState.value = State.Loading()
+        MutableLiveData<State>().value = State.Loading()
         viewModelScope.launch {
             val result = userRepository.signIn(email, password)
             when(result){
                 is ResponseState.Error ->
-                    signInState.value = State.Error(result.message)
+                    MutableLiveData<State>().value = State.Error(result.message)
                 is ResponseState.Success ->
-                    signInState.value = State.Success()
+                    MutableLiveData<State>().value = State.Success()
             }
         }
     }

@@ -35,12 +35,12 @@ class SignInActivity : AppCompatActivity() {
 
     }
 
-    viewModel.signInState.observe(this) {
-        when(it) {
+    viewModel.signInState.observe(this) {state ->
+        when(state) {
             is State.Error -> {
                 binding.dataContainer.visibility = View.VISIBLE
                 binding.progress.visibility = View.GONE
-                showErrorDialog(it.message)
+                showErrorDialog(state.message)
             }
             is State.Loading -> {
                 binding.dataContainer.visibility = View.GONE
@@ -49,7 +49,8 @@ class SignInActivity : AppCompatActivity() {
             is State.Success -> {
                 binding.dataContainer.visibility = View.VISIBLE
                 binding.progress.visibility = View.GONE
-                startActivity(Intent(this, MainActivity::class.java))
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
             }
         }
     }
