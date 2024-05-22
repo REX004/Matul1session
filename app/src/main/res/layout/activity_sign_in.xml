@@ -17,6 +17,12 @@
         android:orientation="vertical"
         android:gravity="center_horizontal"
         android:layout_height="match_parent">
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:cardElevation="8dp"
+            android:outlineAmbientShadowColor="@color/black"
+            android:outlineSpotShadowColor="@color/black" />
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="44dp"
@@ -37,6 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Заполните Свои данные или продолжите через социальные медиа" />
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -78,6 +85,20 @@
             android:layout_height="wrap_content"
             android:text="Войти"
             android:id="@+id/btnSignIn" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeWidth="0dp"
+            app:boxBackgroundColor="#F7F7F9"
+            android:hint="xyz@gmail.com"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="hint" />
+        </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
     <ProgressBar
@@ -86,5 +107,7 @@
         android:layout_height="wrap_content"
         android:visibility="gone"
         android:layout_gravity="center" />
+
+
 
 </FrameLayout>

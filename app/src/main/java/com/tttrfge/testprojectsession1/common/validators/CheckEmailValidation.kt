@@ -13,6 +13,5 @@ object CheckEmailValidation {
                 "[a-z0-9][a-z0-9\\-]{2,25}" +
                 ")+", email)
         return validation
-
     }
 }

@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">TestProjectSession1</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome">Добро пожаловать</string>
+    <string name="onboarding_2_title">Начнем путешествие</string>
+    <string name="onboarding_2_description">Умная, великолепная и модная коллекция Изучите сейчас</string>
 </resources>

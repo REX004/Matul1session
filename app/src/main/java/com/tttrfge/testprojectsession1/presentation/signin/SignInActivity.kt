@@ -6,7 +6,6 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import com.tttrfge.testprojectsession1.data.repository.UserRepositoryImpl
 import com.tttrfge.testprojectsession1.databinding.ActivitySignInBinding
 import com.tttrfge.testprojectsession1.presentation.main.MainActivity
@@ -18,15 +17,10 @@ class SignInActivity : AppCompatActivity() {
         SignInViewModelFactory(UserRepositoryImpl())
     })
 
-//    private lateinit var viewModel: SignInViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//        viewModel = ViewModelProvider.create(
-//            this,
-//            SignInViewModelFactory(UserRepositoryImpl())
-//        )[SignInViewModel::class]
 
     binding.btnSignIn.setOnClickListener {
         val email = binding.etEmail.text.toString()
